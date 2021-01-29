@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
    <section>
       <div class="container">
          <div class="cart">
@@ -25,16 +24,15 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button onclick="handleTotalPrice('phone', false)" id="phone-qnt-decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="phone-qnt" type="text" class="form-control text-center" value="0">
+                           <button onclick="handleTotalPrice('phone', true)" id="phone-qnt-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5 id="phone-total-price">$0</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
                </div>
-
                <div class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item mx-auto">
@@ -43,30 +41,26 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
-
+                           <button id="case-qnt-decrease" onclick="handleTotalPrice('case', false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="case-qnt" type="text" class="form-control text-center" value="0">
+                           <button id="case-qnt-increase" onclick="handleTotalPrice('case', true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$59</h5>
+                        <h5 id="case-total-price">$0</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
                </div>
-
                <div class="cart-item">
                   <div class="row">
-
                      <div class="col-md-8">
                         <h5>Subtotal: </h5>
                         <h5>Tax:</h5>
                         <h5>Total:</h5>
                      </div>
-
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5 id="subtotal">$0</h5>
+                        <h5 id="tax">$0</h5>
+                        <h5 id="grand-total">$0</h5>
                      </div>
                   </div>
                </div>
@@ -77,6 +71,7 @@
          </div>
       </div>
    </section>
+   <script src="script.js"></script>
 </body>
 
 </html>
